@@ -2747,7 +2747,7 @@ var _linuxCloudInitArtifactsReconcilePrivateHostsSh = []byte(`#!/usr/bin/env bas
 set -o nounset
 set -o pipefail
 SLEEP_SECONDS=15
-clusterFQDN={{GetParameter "kubernetesEndpoint"}}
+clusterFQDN="{{GetParameter \"kubernetesEndpoint\"}}"
 if [[ $clusterFQDN != *.privatelink.* ]]; then
   echo "skip reconcile hosts for $clusterFQDN since it's not AKS private cluster"
   exit 0
