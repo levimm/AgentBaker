@@ -3,7 +3,7 @@
 set -o nounset
 set -o pipefail
 SLEEP_SECONDS=15
-clusterFQDN={{WrapAsVariable "kubernetesAPIServerIP"}}
+clusterFQDN={{GetParameter "kubernetesEndpoint"}}
 if [[ $clusterFQDN != *.privatelink.* ]]; then
   echo "skip reconcile hosts for $clusterFQDN since it's not AKS private cluster"
   exit 0
