@@ -24,6 +24,7 @@ func getCustomDataVariables(cs *api.ContainerService, profile *api.AgentPoolProf
 			"kubeletSystemdService":     getBase64EncodedGzippedCustomScript(kubeletSystemdService, cs, profile),
 			"systemdBPFMount":           getBase64EncodedGzippedCustomScript(systemdBPFMount, cs, profile),
 			"initAKSCustomCloud":        getBase64EncodedGzippedCustomScript(initAKSCustomCloudScript, cs, profile),
+			"reconcilePrivateHosts":     getBase64EncodedGzippedCustomScript(reconcilePrivateHosts, cs, profile),
 		},
 	}
 
