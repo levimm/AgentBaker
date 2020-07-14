@@ -4,11 +4,6 @@ set -o nounset
 set -o pipefail
 SLEEP_SECONDS=15
 clusterFQDN="{{FQDN}}"
-echo "clusterFQDN: $clusterFQDN"
-clusterFQDN1="{{kubernetesEndpoint}}"
-echo "clusterFQDN1: $clusterFQDN1"
-clusterFQDN2="{{API_SERVER_NAME}}"
-echo "clusterFQDN2: $clusterFQDN2"
 
 if [[ $clusterFQDN != *.privatelink.* ]]; then
   echo "skip reconcile hosts for $clusterFQDN since it's not AKS private cluster"
