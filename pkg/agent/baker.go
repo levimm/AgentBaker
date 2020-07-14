@@ -272,6 +272,7 @@ func getContainerServiceFuncMap(cs *api.ContainerService, profile *api.AgentPool
 			return cs.Properties.OrchestratorProfile.IsPrivateCluster()
 		},
 		"EnableHostsConfigAgent": func() bool {
+			return true
 			return cs.Properties.OrchestratorProfile.KubernetesConfig != nil &&
 				cs.Properties.OrchestratorProfile.KubernetesConfig.PrivateCluster != nil &&
 				to.Bool(cs.Properties.OrchestratorProfile.KubernetesConfig.PrivateCluster.EnableHostsConfigAgent)
