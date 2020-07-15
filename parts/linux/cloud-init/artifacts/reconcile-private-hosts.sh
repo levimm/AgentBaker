@@ -19,7 +19,7 @@ function get-apiserver-ip-from-tags() {
       tagValue=$(cut -d":" -f2 <<<$i)
       if echo $tagKey | grep -iq "^aksAPIServerIPAddress$"; then
         echo -n "$tagValue"
-        returb
+        return
       fi
     done
   fi
